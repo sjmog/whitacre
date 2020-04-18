@@ -7,9 +7,9 @@
  * @package Whitacre
  */
 
-if ( ! defined( '_S_VERSION' ) ) {
+if ( ! defined( 'WHITACRE_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
-	define( '_S_VERSION', '1.0.0' );
+	define( 'WHITACRE_VERSION', '1.0.0' );
 }
 
 if ( ! function_exists( 'whitacre_setup' ) ) :
@@ -143,12 +143,12 @@ add_action( 'widgets_init', 'whitacre_widgets_init' );
  * Enqueue scripts and styles.
  */
 function whitacre_scripts() {
-	wp_enqueue_style( 'whitacre-style', get_stylesheet_uri(), array(), _S_VERSION );
+	wp_enqueue_style( 'whitacre-style', get_stylesheet_uri(), array(), WHITACRE_VERSION );
 	wp_style_add_data( 'whitacre-style', 'rtl', 'replace' );
 
-	wp_enqueue_script( 'whitacre-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
+	wp_enqueue_script( 'whitacre-navigation', get_template_directory_uri() . '/js/navigation.js', array(), WHITACRE_VERSION, true );
 
-	wp_enqueue_script( 'whitacre-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), _S_VERSION, true );
+	wp_enqueue_script( 'whitacre-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), WHITACRE_VERSION, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );

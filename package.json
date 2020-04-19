@@ -35,6 +35,7 @@
     "map": false
   },
   "scripts": {
+    "watch:css": "node-sass sass/style.scss style.css -w",
     "compile:css": "node-sass sass/style.scss style.css && node-sass sass/woocommerce.scss woocommerce.css && stylelint '*.css' --fix || true && stylelint '*.css' --fix",
     "compile:rtl": "rtlcss style.css style-rtl.css",
     "lint:scss": "wp-scripts lint-style 'sass/**/*.scss'",

@@ -190,6 +190,22 @@
     font-style: italic;
 }
 
+@font-face {
+    font-family: "Freight Text";
+    src: url('fonts/Freight Text/freight_text_book_italic-webfont.woff') format('woff');
+    src: url('fonts/Freight Text/freight_text_book_italic-webfont.woff2') format('woff2');
+    font-weight: 350;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "Freight Text";
+    src: url('fonts/Freight Text/freight_text_bold_italic-webfont.woff') format('woff');
+    src: url('fonts/Freight Text/freight_text_bold_italic-webfont.woff2') format('woff2');
+    font-weight: 700;
+    font-style: italic;
+}
+
 $font__main: Geomanist, Helvetica, Arial, sans-serif;
 $font__code: monaco, consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
 $font__pre: "Courier 10 Pitch", courier, monospace;

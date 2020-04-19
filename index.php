@@ -54,6 +54,15 @@ get_header();
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
+<div class="sign-up-wrapper hero hero-bottom" id="join-us">
+  <h1>Join us</h1>
+  <p class="strap">We're building a global musical community, helping to alleviate isolation for music lovers who can't leave the house.</p>
+
+  <p class="strap">Join us to sing with composers and ensembles you love: it's free!</p>
+
+  <?php get_template_part( 'template-parts/capture' ); ?>
+</div>
+
 <?php
 get_sidebar();
 get_footer();

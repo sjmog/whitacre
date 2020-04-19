@@ -153,6 +153,20 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   font-weight: 950;
   font-style: italic; }
 
+@font-face {
+  font-family: "Freight Text";
+  src: url("fonts/Freight Text/freight_text_book_italic-webfont.woff") format("woff");
+  src: url("fonts/Freight Text/freight_text_book_italic-webfont.woff2") format("woff2");
+  font-weight: 350;
+  font-style: italic; }
+
+@font-face {
+  font-family: "Freight Text";
+  src: url("fonts/Freight Text/freight_text_bold_italic-webfont.woff") format("woff");
+  src: url("fonts/Freight Text/freight_text_bold_italic-webfont.woff2") format("woff2");
+  font-weight: 700;
+  font-style: italic; }
+
 /*--------------------------------------------------------------
 # Normalize
 --------------------------------------------------------------*/
@@ -426,6 +440,248 @@ template {
   display: none; }
 
 /*--------------------------------------------------------------
+# Layout
+--------------------------------------------------------------*/
+h1 {
+  font-size: 100px;
+  line-height: 1;
+  font-weight: 700;
+  color: #444;
+  text-rendering: optimizeLegibility; }
+
+h1 a {
+  text-decoration: none;
+  color: inherit !important; }
+  h1 a:hover {
+    color: inherit; }
+
+h1 em {
+  color: #f38181;
+  font-style: inherit; }
+
+.bordertext {
+  color: #111;
+  text-shadow: -1px -1px 0 #444, 1px -1px 0 #444, -1px 1px 0 #444, 1px 1px 0 #444; }
+
+.lead {
+  margin: 0;
+  max-width: 500px;
+  line-height: 1.6;
+  font-size: 26px;
+  font-family: "Freight Text";
+  font-weight: 350;
+  font-style: italic;
+  text-align: center;
+  color: #fff;
+  text-rendering: optimizeLegibility; }
+
+.lead strong {
+  font-weight: 700; }
+
+.strap {
+  font-family: "Freight Text";
+  font-style: italic;
+  font-weight: 350;
+  color: #fff;
+  font-size: 22px;
+  text-rendering: optimizeLegibility;
+  max-width: 620px;
+  text-align: center;
+  line-height: 1.6; }
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 0 100px 0;
+  position: relative;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), black);
+  overflow: hidden; }
+
+.hero-bottom {
+  min-height: 100vh; }
+
+.hero .logo {
+  width: 120px; }
+
+.hero h1 {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  color: #fff; }
+
+.hero .button {
+  margin-top: 40px;
+  color: #fff;
+  font-weight: 500;
+  font-size: 20px;
+  padding: 10px 30px;
+  transition: opacity 200ms ease-in-out;
+  text-decoration: none; }
+  .hero .button:hover {
+    opacity: 0.9;
+    cursor: pointer; }
+
+.main-navigation {
+  position: fixed;
+  top: 0px;
+  padding: 0;
+  display: flex !important;
+  justify-content: space-between; }
+  .main-navigation .custom-logo-link {
+    padding: 10px 10px 10px 30px; }
+    .main-navigation .custom-logo-link img {
+      height: 50px;
+      width: 50px; }
+
+.nav-menu {
+  display: flex !important;
+  flex-direction: row;
+  justify-content: flex-end;
+  padding-right: 20px; }
+  .nav-menu .menu-item {
+    float: none !important;
+    margin-right: 20px;
+    padding-top: 20px; }
+    .nav-menu .menu-item a {
+      font-size: 18px;
+      font-weight: 350;
+      color: #fff;
+      opacity: 0.8; }
+      .nav-menu .menu-item a:hover {
+        border-bottom: 2px solid #444;
+        opacity: 1; }
+
+.banner {
+  display: flex;
+  background: #111;
+  justify-content: space-around;
+  padding: 20px; }
+  .banner .banner__logo {
+    height: 30px; }
+
+.sidebar {
+  background-color: #444;
+  color: white; }
+
+.post {
+  display: flex;
+  margin-bottom: 0 !important;
+  justify-content: space-between;
+  background-size: cover;
+  background-position: center center; }
+  .post .entry-header {
+    min-height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; }
+    .post .entry-header .upcoming-project {
+      margin: 0;
+      padding: 10px 20px 0;
+      color: #fff;
+      opacity: 0.9;
+      font-family: "Freight Text"; }
+    .post .entry-header .entry-title {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      margin: 0; }
+      .post .entry-header .entry-title a {
+        text-decoration: none;
+        font-weight: 700;
+        color: #fff;
+        opacity: 0.9;
+        font-size: 55px;
+        padding: 0 20px 0;
+        margin-bottom: 5px;
+        margin-top: -5px; }
+    .post .entry-header .partner-logos {
+      display: flex;
+      list-style-type: none;
+      padding-left: 0;
+      margin-left: 20px; }
+      .post .entry-header .partner-logos .partner-logo {
+        height: 60px;
+        margin-right: 20px; }
+  .post .entry-content {
+    color: #fff;
+    margin-top: 0;
+    opacity: 0.9;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 520px;
+    font-size: 18px;
+    padding: 40px; }
+    .post .entry-content > p:first-child {
+      margin-top: 0; }
+
+.button {
+  padding: 20px 30px;
+  background: #f38181; }
+
+.fullscreen-bg {
+  z-index: -100; }
+
+.fullscreen-bg__video {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: auto;
+  height: auto;
+  min-width: 100%;
+  min-height: 100%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); }
+
+@media (max-width: 767px) {
+  .fullscreen-bg {
+    background: url("http://dev2.slicejack.com/fullscreen-video-demo/img/videoframe.jpg") center center/cover no-repeat; }
+  .fullscreen-bg__video {
+    display: none; } }
+
+.email-capture-wrapper label {
+  color: #fff;
+  opacity: 0.8;
+  font-size: 14px; }
+
+.email-capture-inputs {
+  display: flex; }
+  .email-capture-inputs input[type="email"] {
+    background: transparent;
+    border-radius: 0;
+    border: 2px solid #fff;
+    padding: 10px 10px;
+    min-width: 320px;
+    color: #fff !important; }
+    .email-capture-inputs input[type="email"]:focus {
+      outline: none; }
+  .email-capture-inputs input[type="submit"] {
+    border-radius: 0;
+    background: #fff;
+    border: none;
+    font-size: 18px;
+    padding: 10px 18px; }
+    .email-capture-inputs input[type="submit"]:focus, .email-capture-inputs input[type="submit"]:active {
+      outline: none; }
+    .email-capture-inputs input[type="submit"]:hover {
+      background: rgba(255, 255, 255, 0.9);
+      cursor: pointer; }
+
+.site-footer {
+  background: #000;
+  border-top: 1px solid rgba(255, 255, 255, 0.4);
+  color: #fff;
+  opacity: 1;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  font-weight: 350;
+  font-size: 14px; }
+
+/*--------------------------------------------------------------
 # Typography
 --------------------------------------------------------------*/
 body,
@@ -447,14 +703,6 @@ h4,
 h5,
 h6 {
   clear: both; }
-
-h1 {
-  font-size: 85px;
-  line-height: 1;
-  font-weight: 700; }
-
-h1 a {
-  text-decoration: none; }
 
 p {
   margin-bottom: 1.5em; }
@@ -503,10 +751,6 @@ ins {
 big {
   font-size: 125%; }
 
-.bordertext {
-  color: #fafafa;
-  text-shadow: -1px -1px 0 #21759b, 1px -1px 0 #21759b, -1px 1px 0 #21759b, 1px 1px 0 #21759b; }
-
 /*--------------------------------------------------------------
 # Elements
 --------------------------------------------------------------*/
@@ -521,10 +765,10 @@ html {
   box-sizing: border-box; }
 
 body {
-  background: #fafafa; }
+  background: #111; }
 
 hr {
-  background-color: #ccc;
+  background-color: #eaffd0;
   border: 0;
   height: 1px;
   margin-bottom: 1.5em; }
@@ -571,7 +815,7 @@ input[type="submit"] {
   border: 1px solid;
   border-color: #ccc #ccc #bbb;
   border-radius: 3px;
-  background: #e6e6e6;
+  background: #f38181;
   color: rgba(0, 0, 0, 0.8);
   font-size: 12px;
   font-size: 0.75rem;
@@ -736,12 +980,12 @@ a {
   width: 1px;
   word-wrap: normal !important; }
   .screen-reader-text:focus {
-    background-color: #f1f1f1;
+    background-color: #fce38a;
     border-radius: 3px;
     box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
     clip: auto !important;
     clip-path: none;
-    color: #21759b;
+    color: #f38181;
     display: block;
     font-size: 14px;
     font-size: 0.875rem;

@@ -13,8 +13,3 @@ textarea {
 
 @import "headings";
 @import "copy";
-
-.bordertext {
-  color: $bg-color;
-  text-shadow: -1px -1px 0 $text-color, 1px -1px 0 $text-color, -1px 1px 0 $text-color, 1px 1px 0 $text-color;
-}

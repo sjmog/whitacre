@@ -21,45 +21,61 @@
 </head>
 
 <body <?php body_class(); ?>>
+
 <?php wp_body_open(); ?>
+
 <div id="page" class="site">
+
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'whitacre' ); ?></a>
 
-	<header id="masthead" class="site-header">
-		<div class="site-branding">
-			<?php
-			the_custom_logo();
-			if ( is_front_page() && is_home() ) :
-				?>
-				<h1 class="site-title">
-          <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-            <span class="bordertext">Sing</span> Together
-          </a>
-        </h1>
-				<?php
-			else :
-				?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php
-			endif;
-			$whitacre_description = get_bloginfo( 'description', 'display' );
-			if ( $whitacre_description || is_customize_preview() ) :
-				?>
-				<p class="site-description"><?php echo $whitacre_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
-			<?php endif; ?>
-		</div><!-- .site-branding -->
+  <? if ( is_front_page() && is_home() ) : ?>
+    <section class="hero" >
+      <div class="fullscreen-bg">
+          <video loop muted autoplay poster="images/black.png" class="fullscreen-bg__video">
+              <source src="<?php echo get_template_directory_uri() ?>/videos/gloria-trimmed.mp4" type="video/mp4">
+          </video>
+      </div>
 
-		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'whitacre' ); ?></button>
-			<?php
-			wp_nav_menu(
-				array(
-					'theme_location' => 'menu-1',
-					'menu_id'        => 'primary-menu',
-				)
-			);
-			?>
-		</nav><!-- #site-navigation -->
-	</header><!-- #masthead -->
+      <div class="logo">
+        <?php the_custom_logo(); ?>
+      </div>
+
+      <h1 class="site-title">
+        <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+          Sing <em>Together</em>
+        </a>
+      </h1>
+
+      <?php
+        $whitacre_description = get_bloginfo( 'description', 'display' );
+        if ( $whitacre_description || is_customize_preview() ) : ?>
+
+          <p class="lead">
+            <?php echo $whitacre_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+          </p>
+
+      <?php endif; ?>
+
+      <a href="#join-us" class="button">Join us</a>
+    </section> 
+
+    <?php get_template_part( 'template-parts/banner' ) ?>
+
+  <?php endif; ?>
+
+	<nav id="site-navigation" class="main-navigation">
+		<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'whitacre' ); ?></button>
+
+    <?php the_custom_logo(); ?>
+
+		<?php
+		wp_nav_menu(
+			array(
+				'theme_location' => 'menu-1',
+				'menu_id'        => 'primary-menu',
+			)
+		);
+		?>
+	</nav>
 
 	<div id="content" class="site-content">
